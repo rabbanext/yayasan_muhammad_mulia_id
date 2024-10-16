@@ -1,37 +1,158 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<title>Yayasan Muhammad Mulia Indonesia</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+	<!-- Favicons -->
+	<link href="{{ URL::asset('img/favicon.png') }}" rel="icon">
+	<link href="{{ URL::asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+	<!-- Vendor CSS Files -->
+	<link href="{{ URL::asset('vendor/aos/aos.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+	<!-- Template Main CSS File -->
+	<link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
+</head>
+
+<body>
+	<!-- ======= Header ======= -->
+	<div class="top-header">
+		<div class="container">
+			<div class="content">
+			<p class="text-white">Committed to creating a better future</p>
+			<div class="social-links">
+				<a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+				<a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+				<a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+			</div>
+			</div>
+		</div>
+	</div>	
+	<header id="header" class="header">
+		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+			<nav id="navbar" class="navbar w-100">
+				<a href="/" class="logo d-flex align-items-center">
+					<img src="{{ URL::asset('img/logo.png') }}" alt="">
+				</a>
+
+				<ul style="z-index: 99;">
+					<li><a class="nav-link" href="about-us">About us</a></li>
+					<li><a href="our-programs">Program</a></li>
+					<li><a href="our-services">Services</a></li>
+					<li><a class="nav-link" href="our-business">Supported business</a></li>
+					<li><a class="nav-link" href="our-activities">Activities</a></li>
+					<li><a class="nav-link scrollto" href="#">Contact</a></li>
+				</ul>
+
+				<div class="d-flex align-items-center">
+					<button type="button" class="btn btn-primer d-none d-md-inline me-3" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now</button>
+					<!-- <a class="btn btn-primer d-none d-md-inline me-3" href="#about">Donate Now</a> -->
+					<div class="lang-dropdown" style="z-index: 2;">
+					<button class="btn bg-none dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<img src="{{ URL::asset('img/header/en.png') }}" alt="" style="border-radius: 8px; width: 30px;">
+					</button>
+					<ul>
+						<li><a class="dropdown-item" href="#"><img src="{{ URL::asset('img/header/id.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; Bahasa Indonesia</a></li>
+						<li><a class="dropdown-item" href="#"><img src="{{ URL::asset('img/header/en.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; English</a></li>
+					</ul>
+					</div>
+					<i class="bi bi-list mobile-nav-toggle"></i>
+				</div>
+			</nav><!-- .navbar -->
+		</div>
+	</header><!-- End Header -->
+
+    @yield('content')
+
+	<!-- ======= Footer ======= -->
+	<footer id="footer" class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row gy-4">
+					<div class="col-lg-5 col-md-12 footer-info">
+						<a href="/" class="logo d-flex align-items-center">
+							<img src="{{ URL::asset('img/logo.png') }}" alt="">
+						</a>
+						<p>
+							Jalan Tebet Timur Dalam <br>
+							Jakarta Selatan, DKI Jakarta<br>
+							Indonesia <br><br>
+							<strong>Phone:</strong> +62 812 1000 1010<br>
+							<strong>Email:</strong> contact@muhammadmulia.id<br>
+						</p>
+						<div class="social-links mt-3">
+							<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+							<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+							<a href="#" class="tiktok"><i class="bi bi-tiktok"></i></a>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-6 footer-links">
+						<h4>Supported Business</h4>
+						<ul>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Tour & Travel</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Logistic</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Food & Beverage</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Herbal, Pharma, Cosmetic</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">IT & Eco-Technology</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Creative Media Production</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Fashion & Souvenir</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-6 footer-links">
+						<h4>Useful Links</h4>
+						<ul>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="about-us">About us</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="our-programs">Program</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="our-services">Services</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="our-business">Supported Business</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="our-activities">Activities</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+		<div class="copyright">
+			&copy; Copyright <strong><span>Yayasan Muhammad Mulia Indonesia</span></strong>. All Rights Reserved
+		</div>
+		<div class="credits">
+			Designed by <a href="https://muhammadmulia.id/">YAMMI IT</a>
+		</div>
+		</div>
+	</footer><!-- End Footer -->
+
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Vendor JS Files -->
+	<script src="{{ URL::asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
+	<script src="{{ URL::asset('vendor/aos/aos.js') }}"></script>
+	<script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ URL::asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+	<script src="{{ URL::asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ URL::asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+	<script src="{{ URL::asset('vendor/php-email-form/validate.js') }}"></script>
+
+	<!-- Template Main JS File -->
+	<script src="{{ URL::asset('js/main.js') }}"></script>
+
+</body>
+
 </html>

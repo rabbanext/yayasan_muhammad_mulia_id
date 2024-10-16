@@ -24,17 +24,26 @@ class ActivityController extends Controller
         $validation = $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-        $data = Activity::create($validation);
+
+        $imagePath = $request->file('image')->store('uploads', 'public');
+
+        $data = Activity::create([
+            'title' => $validation['title'],
+            'body' => $validation['body'],
+            'image' => $imagePath,
+        ]);
+
         if ($data) {
-            session()->flash('success', 'Activity Add Successfully');
+            session()->flash('success', 'Activity Added Successfully');
             return redirect(route('admin/activities'));
         } else {
-            session()->flash('error', 'Some problem occure');
+            session()->flash('error', 'Some problem occurred');
             return redirect(route('admin.activities/create'));
         }
     }
+
     public function edit($id)
     {
         $activities = Activity::findOrFail($id);
