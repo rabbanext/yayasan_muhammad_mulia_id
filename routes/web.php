@@ -6,12 +6,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ActivityController;
 
-Route::get('/', [HomeController::class, 'index']); // Home page route
-Route::get('/our-activities', [HomeController::class, 'activities']); // Activities page route
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/our-activities', [HomeController::class, 'activities']);
+Route::get('/our-programs', function () {return view('our-programs');});
+Route::get('/our-services', function () {return view('our-services');});
+Route::get('/our-business', function () {return view('our-business');});
 
-Route::get('/our-business', function () {
-    return view('our-business');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

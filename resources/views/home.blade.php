@@ -156,7 +156,7 @@
 		<section id="our-program" class="our-program">
 			<div class="container" data-aos="fade-up">
 				<header class="section-header">
-					<p>Our Program</p>
+					<p>Our Programs</p>
 					<h1>Our current <span>initiatives</span></h1>
 				</header>
 				<div class="row">
