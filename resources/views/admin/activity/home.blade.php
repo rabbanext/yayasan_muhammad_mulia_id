@@ -36,10 +36,16 @@
                                 <td class="align-middle">{{ $activity->title }}</td>
                                 <td class="align-middle">{{ $activity->body }}</td>
                                 <td class="align-middle">{{ $activity->image }}</td>
-                                <td class="align-middle">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ route('admin/activities/edit', ['id'=>$activity->id]) }}" type="button" class="btn btn-secondary">Edit</a>
-                                        <a href="{{ route('admin/activities/delete', ['id'=>$activity->id]) }}" type="button" class="btn btn-danger">Delete</a>
+                                <td class="align-middle text-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <a href="{{ route('admin/activities/edit', ['id'=>$activity->id]) }}" class="btn btn-success me-2">Edit</a>
+                                        <form action="{{ route('admin/activities/delete', ['id'=>$activity->id]) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this activity?')">
+                                                Delete
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

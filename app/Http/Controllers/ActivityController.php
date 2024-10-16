@@ -52,33 +52,52 @@ class ActivityController extends Controller
  
     public function delete($id)
     {
-        $activities = Activity::findOrFail($id)->delete();
-        if ($activities) {
-            session()->flash('success', 'Activity Deleted Successfully');
-            return redirect(route('admin/activities/'));
-        } else {
-            session()->flash('error', 'Activity Not Delete successfully');
-            return redirect(route('admin/activities/'));
+        $activity = Activity::findOrFail($id);
+
+        if ($activity->image) {
+            \Storage::disk('public')->delete($activity->image);
         }
+
+        $deleted = $activity->delete();
+
+        if ($deleted) {
+            session()->flash('success', 'Activity Deleted Successfully');
+        } else {
+            session()->flash('error', 'Activity could not be deleted successfully');
+        }
+
+        return redirect(route('admin/activities'));
     }
  
     public function update(Request $request, $id)
     {
         $activities = Activity::findOrFail($id);
-        $title = $request->title;
-        $body = $request->body;
-        $image = $request->image;
- 
-        $activities->title = $title;
-        $activities->body = $body;
-        $activities->image = $image;
+
+        $validation = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $activities->title = $validation['title'];
+        $activities->body = $validation['body'];
+
+        if ($request->hasFile('image')) {
+            if ($activities->image) {
+                \Storage::disk('public')->delete($activities->image);
+            }
+
+            $imagePath = $request->file('image')->store('uploads', 'public');
+            $activities->image = $imagePath;
+        }
+
         $data = $activities->save();
         if ($data) {
-            session()->flash('success', 'Activity Update Successfully');
+            session()->flash('success', 'Activity Updated Successfully');
             return redirect(route('admin/activities'));
         } else {
-            session()->flash('error', 'Some problem occure');
-            return redirect(route('admin/activities/update'));
+            session()->flash('error', 'Some problem occurred');
+            return redirect(route('admin/activities/update', $activities->id));
         }
     }
 }
