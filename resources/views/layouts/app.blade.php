@@ -50,9 +50,9 @@
 
 				<ul style="z-index: 99;">
 					<li><a class="nav-link" href="about-us">About us</a></li>
-					<li><a href="our-programs">Program</a></li>
+					<li><a href="our-programs">Programs</a></li>
 					<li><a href="our-services">Services</a></li>
-					<li><a class="nav-link" href="our-business">Supported business</a></li>
+					<li><a class="nav-link" href="our-businesses">Supported Businesses</a></li>
 					<li><a class="nav-link" href="our-activities">Activities</a></li>
 					<li><a class="nav-link scrollto" href="#">Contact</a></li>
 				</ul>
