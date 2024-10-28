@@ -178,16 +178,6 @@
       watchSlidesVisibility: true,
   });
 
-  // document.getElementById('next-button').addEventListener('click', function() {
-  //     topSwiper.slideNext();
-  //     bottomSwiper.slideNext();
-  // });
-
-  // document.getElementById('prev-button').addEventListener('click', function() {
-  //     topSwiper.slidePrev();
-  //     bottomSwiper.slidePrev();
-  // });
-
   /**
    * Clients Slider
    */
@@ -263,7 +253,7 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
@@ -272,9 +262,9 @@
         itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
       });
-  
+
       let portfolioFilters = select('#portfolio-filters li', true);
-  
+
       // Function to set the active filter
       const setActiveFilter = (filter) => {
         portfolioFilters.forEach(function(el) {
@@ -289,15 +279,52 @@
         });
         aos_init();
       };
-  
+
       // Set "Education" as the default active filter on load
       setActiveFilter('.filter-education');
-  
+
       on('click', '#portfolio-filters li', function(e) {
         e.preventDefault();
         setActiveFilter(this.getAttribute('data-filter'));
       }, true);
     }
+
+    // Now initialize Swiper after Isotope
+    const topSwiper = new Swiper('.top-swiper', {
+      effect: "fade",
+      loop: true,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      watchSlidesVisibility: true,
+    });
+
+    const bottomSwiper = new Swiper('.bottom-swiper', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 1,
+      loop: true,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      watchSlidesVisibility: true,
+    });
+
+    document.getElementById('next-button').addEventListener('click', function() {
+      topSwiper.slideNext();
+      bottomSwiper.slideNext();
+    });
+
+    document.getElementById('prev-button').addEventListener('click', function() {
+      topSwiper.slidePrev();
+      bottomSwiper.slidePrev();
+    });
   });
 
   /**
@@ -379,4 +406,17 @@ function salinNorek() {
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
   alert("Success!");
+}
+
+function toggleText(element) {
+  var shortText = element.closest('td').querySelector('.short-text');
+  var fullText = element.closest('td').querySelector('.full-text');
+  
+  if (shortText.style.display === 'none') {
+      shortText.style.display = 'block';
+      fullText.style.display = 'none';
+  } else {
+      shortText.style.display = 'none';
+      fullText.style.display = 'block';
+  }
 }

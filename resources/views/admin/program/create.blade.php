@@ -4,49 +4,49 @@
             {{ __('Create Program') }}
         </h2>
     </x-slot>
- 
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h1 class="mb-0">Add Program</h1>
-                    <hr />
-                    @if (session()->has('error'))
-                    <div>
-                        {{session('error')}}
+                <div class="px-6 py-4">
+                    <div class="flex justify-between items-center pb-2">
+                        <h1>Add New Program</h1>
+                        <p><a href="{{ route('admin/programs') }}" class="btn btn-primary">Go Back</a></p>
                     </div>
-                    @endif
-                    <p><a href="{{ route('admin/programs') }}" class="btn btn-primary">Go Back</a></p>
- 
+                    <hr class="pb-4" />
+
                     <form action="{{ route('admin/programs/save') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="text" name="title" class="form-control" placeholder="Title">
-                                @error('title')
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="title" name="title" placeholder="Program Title" required>
+                            <label for="title">Title</label>
+                            @error('title')
                                 <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" id="category" name="category" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="education">Education</option>
+                                <option value="economic">Economic</option>
+                                <option value="research">Research</option>
+                                <option value="humanity">Humanity</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="category">Category</label>
+                            @error('category')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="body" name="body" placeholder="Program Body Text"></textarea>
+                            @error('body')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="text" name="category" class="form-control" placeholder="Category">
-                                @error('category')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="text" name="body" class="form-control" placeholder="Body">
-                                @error('body')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="file" name="image" class="form-control" placeholder="Image" accept="image/*">
+                                <input type="file" name="image" class="form-control" placeholder="Image" accept="image/*" required>
                                 @error('image')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -63,4 +63,14 @@
             </div>
         </div>
     </div>
+
+    <!-- CKEditor Script -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('textarea[name=body]'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </x-dashboard-layout>

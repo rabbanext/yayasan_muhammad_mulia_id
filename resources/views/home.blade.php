@@ -1,5 +1,25 @@
 @extends('layouts.app')
 
+@section('head')
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Yayasan Muhammad Mulia Indonesia",
+      "url": "https://www.muhammadmulia.id",
+      "logo": "https://www.muhammadmulia.id/img/logo.png",
+      "description": "Connecting Hearts, Spreading the Lights. Together with Muhammad Mulia Indonesia Foundation, we are committed to creating a better future through Education, Economic Independence, Research, and Humanitarian Work.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-819-2766-1977",
+        "contactType": "Customer Support",
+        "areaServed": "ID",
+        "availableLanguage": "Indonesian"
+      }
+    }
+    </script>
+@endsection
+
 @section('content')
 	<!-- ======= Hero Section ======= -->
 	<section id="hero" class="hero d-flex align-items-center">
@@ -8,12 +28,12 @@
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="img-container">
-							<img data-aos="fade-up" src="{{ URL::asset('img/hero/IndonesiaBerbagi.png') }}" alt="">
+							<img src="{{ URL::asset('img/hero/IndonesiaBerbagi.png') }}" alt="">
 						</div>
-						<h1 data-aos="fade-up" data-aos-delay="100">Connecting Hearts, <br> Spreading the Lights</h1>
-						<h5 data-aos="fade-up" data-aos-delay="200">Together with Muhammad Mulia Indonesia Foundation, we are committed to creating a better future through: Education, Economic Independence, Research, and Humanitarian Work.</h5>
-						<h3 data-aos="fade-up" data-aos-delay="300" class="fst-italic">Start with Small Steps, Create a Big Impact!</h3>
-						<div data-aos="fade-up">
+						<h1>Connecting Hearts, <br> Spreading the Lights</h1>
+						<h5>Together with Muhammad Mulia Indonesia Foundation, we are committed to creating a better future through: Education, Economic Independence, Research, and Humanitarian Work.</h5>
+						<h3 class="fst-italic">Start with Small Steps, Create a Big Impact!</h3>
+						<div>
 							<button type="button" class="btn btn-primer scrollto d-inline-flex align-items-center justify-content-center align-self-center mb-3" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
 							<a href="#counts" class="btn btn-outline-third scrollto d-inline-flex align-items-center justify-content-center align-self-center mb-3">
 								Learn more
@@ -30,7 +50,7 @@
 		<section id="counts" class="counts">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-7 col-md-12 order-last" data-aos="fade-up" data-aos-delay="100">
+					<div class="col-lg-7 col-md-12 order-last">
 						<div class="row">
 							<div class="col-lg-3 col-6 mb-lg-0 mb-5">
 								<div class="count-box">
@@ -81,7 +101,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-5 col-md-12 vl order-first mb-5 mb-md-0" data-aos="fade-up">
+					<div class="col-lg-5 col-md-12 vl order-first mb-5 mb-md-0">
 						<h4>About us</h4>
 						<h2>Get to <span>know</span> more about <br> Yayasan Muhammad Mulia Indonesia</h2>
 						<a href="#" class="text-anchor">Learn more <i class="bi bi-arrow-up-right"></i></a>
@@ -92,47 +112,37 @@
 
 		<!-- ecosystem Section -->
 		<section id="our-ecosystem" class="our-ecosystem section">
-			<header class="section-header" data-aos="fade-up">
+			<header class="section-header">
 				<h1>Our <span>Ecosystem</span></h1>
 			</header>
 			<div class="container">
 				<div class="row our-ecosystem-container">
-					<div class="col-md-12 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-					<div class="text-start" data-aos="fade-up">
-						<p>Our Ecosystem</p>
-						<h2>Ecosystem of Muhammad Mulia Foundation</h2>
-					</div>
-					<a href="#" class="btn btn-second mb-5">Learn More</a>
-					</div><!-- End Card Item -->
-
-					<div class="col-md-12 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-					<div class="card our-ecosystem-card mb-4">
-						<div class="img-container">
-							<img src="{{ URL::asset('img/ecosystem/1.png') }}" class="img-fluid" alt="" width="50" height="50">
+					<div class="col-md-12 col-lg-4">
+						<div class="text-start">
+							<p>Our Ecosystem</p>
+							<h2>Ecosystem of Muhammad Mulia Foundation</h2>
 						</div>
-						<h4>Education</h4>
-						<p>Provides quality educational opportunities through scholarships, e-learning, and workshops to enhance access to education.</p>
+						<a href="#" class="btn btn-second mb-5">Learn More</a>
 					</div>
-					</div><!-- End Card Item -->
 
-					<div class="col-md-12 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-					<div class="card our-ecosystem-card mb-4">
-						<div class="img-container">
-							<img src="{{ URL::asset('img/ecosystem/2.png') }}" class="img-fluid" alt="" width="50" height="50">
+					<div class="col-md-12 col-lg-4">
+						<div class="card our-ecosystem-card mb-4">
+							<div class="img-container">
+								<img src="{{ URL::asset('img/ecosystem/1.png') }}" class="img-fluid" alt="" width="50" height="50">
+							</div>
+							<h4>Education</h4>
+							<p>Provides quality educational opportunities through scholarships, e-learning, and workshops to enhance access to education.</p>
 						</div>
-						<h4>Economic Empowerment</h4>
-						<p>Fosters economic independence by offering training and support for micro, small, and medium enterprises (MSMEs).</p>
-					</div>
-					<div class="card our-ecosystem-card mb-4">
-						<div class="img-container">
-							<img src="{{ URL::asset('img/ecosystem/2.png') }}" class="img-fluid" alt="" width="50" height="50">
+						<div class="card our-ecosystem-card mb-4">
+							<div class="img-container">
+								<img src="{{ URL::asset('img/ecosystem/2.png') }}" class="img-fluid" alt="" width="50" height="50">
+							</div>
+							<h4>Economic Empowerment</h4>
+							<p>Fosters economic independence by offering training and support for micro, small, and medium enterprises (MSMEs).</p>
 						</div>
-						<h4>Economic Empowerment</h4>
-						<p>Fosters economic independence by offering training and support for micro, small, and medium enterprises (MSMEs).</p>
 					</div>
-					</div><!-- End Card Item -->
 
-					<div class="col-md-12 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+					<div class="col-md-12 col-lg-4">
 					<div class="card our-ecosystem-card mb-4">
 						<div class="img-container">
 							<img src="{{ URL::asset('img/ecosystem/3.png') }}" class="img-fluid" alt="" width="50" height="50">
@@ -147,20 +157,20 @@
 						<h4>Research</h4>
 						<p>Promotes innovative research initiatives to address social issues and generate solutions through collaboration with academic institutions.</p>
 					</div>
-					</div><!-- End Card Item -->
+					</div>
 				</div>
 			</div>
 		</section><!-- /ecosystem Section -->
 
 		<!-- ======= our-program Section ======= -->
 		<section id="our-program" class="our-program">
-			<div class="container" data-aos="fade-up">
+			<div class="container">
 				<header class="section-header">
 					<p>Our Programs</p>
 					<h1>Our current <span>initiatives</span></h1>
 				</header>
 				<div class="row">
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+					<div class="col-lg-3 col-md-6">
 						<div class="box">
 							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
 							<div class="box-content">
@@ -174,7 +184,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+					<div class="col-lg-3 col-md-6">
 						<div class="box">
 							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
 							<div class="box-content">
@@ -188,7 +198,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+					<div class="col-lg-3 col-md-6">
 						<div class="box">
 							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
 							<div class="box-content">
@@ -202,7 +212,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+					<div class="col-lg-3 col-md-6">
 						<div class="box">
 							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
 							<div class="box-content">
@@ -217,7 +227,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="text-center mt-5">
+				<div class="text-center mt-lg-5">
 					<div class="btn btn-second">See All Programs <i class="bi bi-arrow-right"></i></div>
 				</div>
 			</div>
@@ -225,7 +235,7 @@
 
 		<!-- ======= Services Section ======= -->
 		<section class="our-services">
-			<div class="container" data-aos="fade-up">
+			<div class="container">
 				<header class="section-header">
 					<p>Our Services</p>
 					<h1>We're ready to <span>collaborate</span></h1>
@@ -273,14 +283,15 @@
 						</div>
 					</div>
 				</div>
-				<div class="text-center mt-5">
+				<div class="text-center mt-lg-5">
 					<div class="btn btn-third">See All Services <i class="bi bi-arrow-right"></i></div>
 				</div>
 			</div>
 		</section><!-- End Services Section -->
 
+		<!-- ======= Supported Business Section ======= -->
 		<section id="our-activities" class="our-activities">
-			<div class="container" data-aos="fade-up">
+			<div class="container">
 				<div class="header-container">
 					<header class="section-header">
 						<p>Our Activities</p>
@@ -332,11 +343,11 @@
 					</div>
 				</div>
 			</div>
-			</section><!-- End our-activities Section -->
+		</section><!-- End our-activities Section -->
 
 		<!-- ======= Supported Business Section ======= -->
 		<section id="supported-business" class="supported-business">
-			<div class="container" data-aos="fade-up">
+			<div class="container">
 				<div class="row">
 					<div class="col-lg-4">
 						<img src="{{ URL::asset('img/features.png') }}" class="img-fluid" alt="">
@@ -440,7 +451,7 @@
 
 		<!-- ======= Clients Section ======= -->
 		<section id="clients" class="clients">
-			<div class="container" data-aos="fade-up">
+			<div class="container">
 				<header class="section-header">
 					<h2>Our <span>Partner & Client</span></h2>
 				</header>
@@ -482,27 +493,5 @@
 				<img src="{{ URL::asset('img/support/flow-2.png') }}" alt="" style="width: 100%; margin-bottom: 60px;">
 			</div>
 		</section>
-
-		<div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="donateModalLabel"></h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body text-center">
-						<p>#IndonesiaSharing</p>
-						<p>Let's Make Dreams and Hopes Come True Together!</p>
-						<p>Join Us in Making a Difference!</p>
-						<img src="{{ URL::asset('img/donate/bsi.svg') }}" alt="" width="372" height="100" style="width: 100%;" />
-						<h3 class="mt-5">7202105097</h3>
-						<input type="text" value="7202105097" id="norek" hidden>
-						<p class="mt-0">a.n. Yayasan Muhammad Mulia Indonesia</p>
-						<button onclick="salinNorek()" class="btn btn-sm btn-primer mb-4">Copy account number</button>
-						<p>Every small step can make a big difference. With your donation, we can help more people, transform lives, and bring new hope.</p>
-					</div>
-				</div>
-			</div>
-		</div>
 	</main><!-- End #main -->
 @endsection

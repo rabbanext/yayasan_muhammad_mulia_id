@@ -34,23 +34,23 @@
 					<div class="col-lg-6 col-md-12">
 						<div class="box">
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/1.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/1.png') }}" alt="" height="100" width="100">
 								<p>Education</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/2.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/2.png') }}" alt="" height="100" width="100">
 								<p>Economic <br> Empowerment</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/3.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/3.png') }}" alt="" height="100" width="100">
 								<p>Research</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/4.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/4.png') }}" alt="" height="100" width="100">
 								<p>Humanity</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/5.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/5.png') }}" alt="" height="100" width="100">
 								<p>Others</p>
 							</div>
 						</div>
@@ -73,7 +73,7 @@
 							<div class="box">
 								<div class="img-container">
 									<img  src="{{ asset('storage/' . $activity->image) }}" alt="{{ $activity->title }}">
-									<div class="overlay">
+									<div class="overlay w-100">
 										<p>{{ $activity->title }}</p>
 									</div>
 								</div>
@@ -84,7 +84,7 @@
 							<div class="box">
 								<div class="img-container">
 									<img src="404" alt="">
-									<div class="overlay">
+									<div class="overlay w-100">
 										<p>No Activity Found</p>
 									</div>
 								</div>
@@ -97,7 +97,7 @@
 
 		<section id="banner">
 			<div class="container">
-				<img src="assets/img/page-activities/banner.png" class="w-100" alt="">
+				<img src="{{ URL::asset('img/page-activities/banner.png" class="w-100" alt="">
 			</div>
 		</section>
 	</main><!-- End #main -->

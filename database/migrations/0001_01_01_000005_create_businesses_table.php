@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('businesses', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('category');
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->string('url_type');
             $table->string('url');
             $table->string('image');

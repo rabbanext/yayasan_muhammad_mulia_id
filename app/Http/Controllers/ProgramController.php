@@ -24,7 +24,7 @@ class ProgramController extends Controller
         $validation = $request->validate([
             'title' => 'required',
             'category' => 'required',
-            'body' => 'required',
+            'body' => 'nullable',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -78,7 +78,7 @@ class ProgramController extends Controller
         $validation = $request->validate([
             'title' => 'required',
             'category' => 'required',
-            'body' => 'required',
+            'body' => 'nullable',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 

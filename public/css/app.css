@@ -173,8 +173,8 @@
   
   @media (max-width: 768px) {
     section {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
   
@@ -1007,7 +1007,6 @@
       justify-content: space-between;
       padding-bottom: 40px;
       /* display: none; */
-      opacity: 0;
   }
   .our-services .btn {
     flex: 1;
@@ -1269,6 +1268,7 @@
   # Clients
   --------------------------------------------------------------*/
   .clients img {
+    width: 100%;
     transition: 0.3s;
   }
   
@@ -3146,7 +3146,7 @@
     color: #a5c5fe;
     font-size: 14px;
   }
-  
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/

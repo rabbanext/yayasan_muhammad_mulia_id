@@ -7,13 +7,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\BusinessController;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/our-programs', [HomeController::class, 'programs']);
+Route::get('/our-services', [HomeController::class, 'services']);
+Route::get('/our-businesses', [HomeController::class, 'businesses']);
 Route::get('/our-activities', [HomeController::class, 'activities']);
-Route::get('/our-programs', function () {return view('our-programs');});
-Route::get('/our-services', function () {return view('our-services');});
-Route::get('/our-businesses', function () {return view('our-businesses');});
-
+Route::get('/about-us', function () {return view('about-us');});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

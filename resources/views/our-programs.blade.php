@@ -31,7 +31,7 @@
 						</p>
 					</div>
 					<div class="col-12 col-lg-5 order-first order-md-last">
-						<img src="assets/img/page-program/hero/hero.png" alt="" height="200" width="200">
+						<img src="{{ URL::asset('img/page-program/hero/hero.png') }}" alt="" height="200" width="200">
 					</div>
 				</div>
 			</div>
@@ -52,23 +52,23 @@
 					<div class="col-lg-6 col-md-12">
 						<div class="box">
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/1.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img//page-program/ecosystem/1.png') }}" alt="" height="100" width="100">
 								<p>Education</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/2.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img//page-program/ecosystem/2.png') }}" alt="" height="100" width="100">
 								<p>Economic <br> Empowerment</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/3.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img//page-program/ecosystem/3.png') }}" alt="" height="100" width="100">
 								<p>Research</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/4.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img//page-program/ecosystem/4.png') }}" alt="" height="100" width="100">
 								<p>Humanity</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/5.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img//page-program/ecosystem/5.png') }}" alt="" height="100" width="100">
 								<p>Others</p>
 							</div>
 						</div>
@@ -76,99 +76,41 @@
 				</div>
 			</div>
 		</section><!-- End Ecosystem Section -->
-		<!-- ======= Portfolio Section ======= -->
+		
+		<!-- ======= Program Section ======= -->
 		<section id="portfolio" class="portfolio">
 			<div class="container">
-			<header class="section-header">
-				<p>Our Programs</p>
-				<h2>Our current <span>initiatives</span></h2>
-			</header>
+				<header class="section-header">
+					<p>Our Programs</p>
+					<h2>Our current <span>initiatives</span></h2>
+				</header>
 
-			<ul id="portfolio-filters">
-				<!-- <li data-filter="*" class="filter-active">All</li> -->
-				<li data-filter=".filter-education">Education</li>
-				<li data-filter=".filter-economic">Economic Empowerment</li>
-				<li data-filter=".filter-research">Research</li>
-				<li data-filter=".filter-humanity">Humanity</li>
-				<li data-filter=".filter-other">Others</li>
-			</ul>
+				<ul id="portfolio-filters">
+					<!-- <li data-filter="*" class="filter-active">All</li> -->
+					<li data-filter=".filter-education">Education</li>
+					<li data-filter=".filter-economic">Economic Empowerment</li>
+					<li data-filter=".filter-research">Research</li>
+					<li data-filter=".filter-humanity">Humanity</li>
+					<li data-filter=".filter-other">Others</li>
+				</ul>
 
-			<div class="row gy-4 portfolio-container">
-				<div class="col-lg-3 col-md-6 portfolio-item filter-education">
-					<div class="box">
-						<img src="assets/img/our-program/1.png" alt="">
-						<div class="box-content">
-							<h6>Education</h6>
-							<h5>Muhammad Mulia Boarding School Development</h5>
-							<p class="mb-2">
-							The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-							</p>
-							<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-							<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
+				<div class="row gy-4 portfolio-container">
+					@foreach($programs as $program)
+						<div class="col-lg-3 col-md-6 portfolio-item filter-{{ strtolower($program->category) }}">
+							<div class="box">
+								<img src="{{ asset('storage/' . $program->image) }}" alt="{{ $program->title }}" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;">
+								<div class="box-content">
+									<h6>{{ ucfirst($program->category) }}</h6>
+									<h5>{{ $program->title }}</h5>
+									<p class="mb-2">{!! \Illuminate\Support\Str::limit($program->body, 100, '...') !!}</p>
+									<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
+									<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
+								</div>
+							</div>
 						</div>
-					</div>
+					@endforeach
 				</div>
-				<div class="col-lg-3 col-md-6 portfolio-item filter-economic">
-					<div class="box">
-						<img src="assets/img/our-program/1.png" alt="">
-						<div class="box-content">
-							<h6>Education</h6>
-							<h5>Muhammad Mulia Boarding School Development</h5>
-							<p class="mb-2">
-							The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-							</p>
-							<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-							<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 portfolio-item filter-research">
-					<div class="box">
-						<img src="assets/img/our-program/1.png" alt="">
-						<div class="box-content">
-							<h6>Education</h6>
-							<h5>Muhammad Mulia Boarding School Development</h5>
-							<p class="mb-2">
-							The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-							</p>
-							<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-							<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 portfolio-item filter-humanity">
-					<div class="box">
-						<img src="assets/img/our-program/1.png" alt="">
-						<div class="box-content">
-							<h6>Education</h6>
-							<h5>Muhammad Mulia Boarding School Development</h5>
-							<p class="mb-2">
-							The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-							</p>
-							<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-							<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 portfolio-item filter-other">
-					<div class="box">
-						<img src="assets/img/our-program/1.png" alt="">
-						<div class="box-content">
-							<h6>Education</h6>
-							<h5>Muhammad Mulia Boarding School Development</h5>
-							<p class="mb-2">
-							The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-							</p>
-							<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-							<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
-						</div>
-					</div>
-				</div>
-
 			</div>
-
-			</div>
-
-		</section><!-- End Portfolio Section -->
+		</section><!-- End Program Section -->
 	</main><!-- End #main -->
 @endsection

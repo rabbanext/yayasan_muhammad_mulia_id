@@ -22,7 +22,7 @@
 						</p>
 					</div>
 					<div class="col-12 col-lg-5 order-first order-md-last">
-						<img src="assets/img/page-program/hero/hero.png" alt="" height="200" width="200">
+						<img src="{{ URL::asset('img/page-program/hero/hero.png') }}" alt="" height="200" width="200">
 					</div>
 				</div>
 			</div>
@@ -43,23 +43,23 @@
 					<div class="col-lg-6 col-md-12">
 						<div class="box">
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/1.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/1.png') }}" alt="" height="100" width="100">
 								<p>Education</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/2.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/2.png') }}" alt="" height="100" width="100">
 								<p>Economic <br> Empowerment</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/3.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/3.png') }}" alt="" height="100" width="100">
 								<p>Research</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/4.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/4.png') }}" alt="" height="100" width="100">
 								<p>Humanity</p>
 							</div>
 							<div class="ecosystem-box mx-2 mt-2">
-								<img src="assets/img/page-program/ecosystem/5.png" alt="" height="100" width="100">
+								<img src="{{ URL::asset('img/page-program/ecosystem/5.png') }}" alt="" height="100" width="100">
 								<p>Others</p>
 							</div>
 						</div>
@@ -125,62 +125,17 @@
 						</div>
 					</div>
 					<div class="row gy-4">
-						<div class="col-lg-3 col-md-6 service-item filter-education">
-							<div class="box">
-								<div class="box-content">
-									<img src="assets/img/page-services/services/1.png" alt="" width="30" height="30">
-									<h5>Support for CSR Programs in the Field of Education</h5>
-									<p class="mb-2">
-										Provide consultancy and support services for companies or institutions looking to implement CSR programs. Assist in designing and managing CSR programs aimed at enhancing the quality of education, such as school infrastructure development, scholarships, etc
-									</p>
+						@foreach($services as $service)
+							<div class="col-lg-3 col-md-6 service-item filter-{{ strtolower($service->category) }}">
+								<div class="box">
+									<div class="box-content">
+										<img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;">
+										<h5>{{ $service->title }}</h5>
+										<p class="mb-2">{{ $service->body }}</p>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 service-item filter-economic">
-							<div class="box">
-								<div class="box-content">
-									<img src="assets/img/page-services/services/1.png" alt="" width="30" height="30">
-									<h5>Support for CSR Programs in the Field of Education</h5>
-									<p class="mb-2">
-										Provide consultancy and support services for companies or institutions looking to implement CSR programs. Assist in designing and managing CSR programs aimed at enhancing the quality of education, such as school infrastructure development, scholarships, etc
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 service-item filter-research">
-							<div class="box">
-								<div class="box-content">
-									<img src="assets/img/page-services/services/1.png" alt="" width="30" height="30">
-									<h5>Support for CSR Programs in the Field of Education</h5>
-									<p class="mb-2">
-										Provide consultancy and support services for companies or institutions looking to implement CSR programs. Assist in designing and managing CSR programs aimed at enhancing the quality of education, such as school infrastructure development, scholarships, etc
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 service-item filter-humanity">
-							<div class="box">
-								<div class="box-content">
-									<img src="assets/img/page-services/services/1.png" alt="" width="30" height="30">
-									<h5>Support for CSR Programs in the Field of Education</h5>
-									<p class="mb-2">
-										Provide consultancy and support services for companies or institutions looking to implement CSR programs. Assist in designing and managing CSR programs aimed at enhancing the quality of education, such as school infrastructure development, scholarships, etc
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 service-item filter-other">
-							<div class="box">
-								<div class="box-content">
-									<img src="assets/img/page-services/services/1.png" alt="" width="30" height="30">
-									<h5>Support for CSR Programs in the Field of Education</h5>
-									<p class="mb-2">
-										Provide consultancy and support services for companies or institutions looking to implement CSR programs. Assist in designing and managing CSR programs aimed at enhancing the quality of education, such as school infrastructure development, scholarships, etc
-									</p>
-								</div>
-							</div>
-						</div>
-		
+						@endforeach
 					</div>
 				</div>
 			</div>

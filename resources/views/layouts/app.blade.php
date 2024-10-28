@@ -10,21 +10,21 @@
 	<meta content="" name="keywords">
 
 	<!-- Favicons -->
-	<link href="{{ URL::asset('img/favicon.png') }}" rel="icon">
-	<link href="{{ URL::asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+	<link href="{{ asset('img/favicon.png') }}" rel="icon">
+	<link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 	<!-- Vendor CSS Files -->
-	<link href="{{ URL::asset('vendor/aos/aos.css') }}" rel="stylesheet">
-	<link href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ URL::asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-	<link href="{{ URL::asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-	<link href="{{ URL::asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-	<link href="{{ URL::asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
 	<!-- Template Main CSS File -->
-	<link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -138,6 +138,29 @@
 		</div>
 		</div>
 	</footer><!-- End Footer -->
+
+	<!-- Donate Modal -->
+	<div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-fullscreen">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="donateModalLabel"></h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body text-center">
+					<p>#IndonesiaSharing</p>
+					<p>Let's Make Dreams and Hopes Come True Together!</p>
+					<p>Join Us in Making a Difference!</p>
+					<img src="{{ URL::asset('img/donate/bsi.svg') }}" alt="" width="372" height="100" style="width: 100%;" />
+					<h3 class="mt-5">7202105097</h3>
+					<input type="text" value="7202105097" id="norek" hidden>
+					<p class="mt-0">a.n. Yayasan Muhammad Mulia Indonesia</p>
+					<button onclick="salinNorek()" class="btn btn-sm btn-primer mb-4">Copy account number</button>
+					<p>Every small step can make a big difference. With your donation, we can help more people, transform lives, and bring new hope.</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- End Donate Modal -->
 
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
