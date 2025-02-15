@@ -186,12 +186,12 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="box">
-							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
+							<img src="{{ URL::asset('img/our-program/2.png') }}" alt="">
 							<div class="box-content">
-								<h6>Economic Empowerment</h6>
-								<h5>Muhammad Mulia Boarding School Development</h5>
+								<h6>Education</h6>
+								<h5>Development of Al-Quran Memorization Boarding School in Kenten Palembang</h5>
 								<p class="mb-2">
-								The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
+								A boarding school focused primarily on Tahfidz (Al-Quran memorization), with additional skills training to enable the graduates to be ...
 								</p>
 								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
 								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
@@ -200,13 +200,12 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="box">
-							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
+							<img src="{{ URL::asset('img/our-program/3.png') }}" alt="">
 							<div class="box-content">
-								<h6>Research</h6>
-								<h5>Muhammad Mulia Boarding School Development</h5>
+								<h6>Education</h6>
+								<h5>Development of Insan Mandiri Arrahman School (Cultivating Honest and Quality Individuals)</h5>
 								<p class="mb-2">
-								The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-								</p>
+								A school with a vision to become the best model school at the national level, actively fostering independent ...								</p>
 								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
 								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
 							</div>
@@ -214,12 +213,11 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="box">
-							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
+							<img src="{{ URL::asset('img/our-program/4.png') }}" alt="">
 							<div class="box-content">
-								<h6>Humanity</h6>
-								<h5>Muhammad Mulia Boarding School Development</h5>
-								<p class="mb-2">
-								The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
+								<h6>Education</h6>
+								<h5>Istanbul Gelisim University Scholarships for Indonesian Students</h5>
+								<p class="mb-2"> developed into a student exchange Providing opportunities for outstanding Indonesian students to study abroad. This scholarship program can be further ...
 								</p>
 								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
 								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
@@ -243,9 +241,9 @@
 				<div class="swipers-wrapper">
 					<div class="top-swiper">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide top-swiper-slide" style="background: url('https://via.placeholder.com/700x400/32cd32') no-repeat center; background-size: cover;"></div>
-							<div class="swiper-slide top-swiper-slide" style="background: url('https://via.placeholder.com/700x400/fed200') no-repeat center; background-size: cover;"></div>
-							<div class="swiper-slide top-swiper-slide" style="background: url('https://via.placeholder.com/700x400/455455') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('https://placehold.co/700x400') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('https://placehold.co/700x400') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('https://placehold.co/700x400') no-repeat center; background-size: cover;"></div>
 						</div>
 					</div>
 					<div class="bottom-swiper">
@@ -302,7 +300,7 @@
 				<div class="row" data-aos="fade-left">
 					<div class="col-lg-6 col-md-12 mb-3">
 						<div class="card main">
-							<img src="https://via.placeholder.com/400x300/fed200" alt="">
+							<img src="https://placehold.co/400x300" alt="">
 							<div class="card-body">
 								<p>October 19, 2022</p>
 								<h5>Muhammad Mulia Indonesia</h5>
@@ -315,7 +313,7 @@
 						<div class="card mb-3">
 							<div class="row g-0">
 								<div class="col-md-4">
-									<img src="https://via.placeholder.com/150x200/fed200" class="img-fluid rounded-start" alt="...">
+									<img src="https://placehold.co/150x200" class="img-fluid rounded-start" alt="...">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
@@ -329,7 +327,7 @@
 						<div class="card mb-3">
 							<div class="row g-0">
 								<div class="col-md-4">
-									<img src="https://via.placeholder.com/150x200/fed200" class="img-fluid rounded-start" alt="...">
+									<img src="https://placehold.co/150x200" class="img-fluid rounded-start" alt="...">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
