@@ -362,7 +362,7 @@
   }
   
   .header .lang-dropdown ul a {
-    padding: 0 5px;
+    padding: 0;
   }
   
   .header .lang-dropdown ul a i {
@@ -370,9 +370,11 @@
   }
   
   .header .lang-dropdown ul a:hover,
+  .header .lang-dropdown ul a:focus,
   .header .lang-dropdown ul .active:hover,
   .header .lang-dropdown ul li:hover>a {
     color: #2ECC71;
+    padding: 0;
   }
   
   .header .lang-dropdown:hover>ul {
@@ -672,7 +674,13 @@
     margin-bottom: 20px;
     font-size: 64px;
   }
-  
+
+  .hero p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
+
   .hero h5 {
     font-weight: 300;
     margin-bottom: 60px;

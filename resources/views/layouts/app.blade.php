@@ -61,13 +61,26 @@
 					<button type="button" class="btn btn-primer d-none d-md-inline me-3" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now</button>
 					<!-- <a class="btn btn-primer d-none d-md-inline me-3" href="#about">Donate Now</a> -->
 					<div class="lang-dropdown" style="z-index: 2;">
-					<button class="btn bg-none dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<img src="{{ URL::asset('img/header/en.png') }}" alt="" style="border-radius: 8px; width: 30px;">
-					</button>
-					<ul>
-						<li><a class="dropdown-item" href="#"><img src="{{ URL::asset('img/header/id.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; Bahasa Indonesia</a></li>
-						<li><a class="dropdown-item" href="#"><img src="{{ URL::asset('img/header/en.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; English</a></li>
-					</ul>
+						<button class="btn bg-none dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="{{ URL::asset('img/header/' . app()->getLocale() . '.png') }}" alt="" style="border-radius: 8px; width: 30px;">
+						</button>
+						<ul>
+							<li>
+								<a class="dropdown-item" href="{{ route('switch-language', 'id') }}">
+									<img src="{{ URL::asset('img/header/id.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; Bahasa Indonesia
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{ route('switch-language', 'en') }}">
+									<img src="{{ URL::asset('img/header/en.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; English
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{ route('switch-language', 'ar') }}">
+									<img src="{{ URL::asset('img/header/ar.png') }}" alt="" style="border-radius: 8px; width: 30px;">&nbsp; Arabic
+								</a>
+							</li>
+						</ul>
 					</div>
 					<i class="bi bi-list mobile-nav-toggle"></i>
 				</div>

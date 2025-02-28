@@ -30,9 +30,9 @@
 						<div class="img-container">
 							<img src="{{ URL::asset('img/hero/IndonesiaBerbagi.png') }}" alt="">
 						</div>
-						<h1>Connecting Hearts, <br> Spreading the Lights</h1>
-						<h5>Together with Muhammad Mulia Indonesia Foundation, we are committed to creating a better future through: Education, Economic Independence, Research, and Humanitarian Work.</h5>
-						<h3 class="fst-italic">Start with Small Steps, Create a Big Impact!</h3>
+						<h1>{!! __('home.hero') !!}</h1>
+						<p>{!! __('home.hero-sub') !!}</p>
+						<h3 class="fst-italic">{!! __('home.hero-small') !!}</h3>
 						<div>
 							<button type="button" class="btn btn-primer scrollto d-inline-flex align-items-center justify-content-center align-self-center mb-3" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
 							<a href="#counts" class="btn btn-outline-third scrollto d-inline-flex align-items-center justify-content-center align-self-center mb-3">

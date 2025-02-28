@@ -9,6 +9,19 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BusinessController;
 
+Route::get('/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'id', 'ar'])) {
+        abort(400);
+    }
+
+    // Store locale in session
+    Session::put('locale', $locale);
+    Session::save();
+
+    return Redirect::back();
+})->name('switch-language');
+
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/our-programs', [HomeController::class, 'programs']);
 Route::get('/our-services', [HomeController::class, 'services']);
