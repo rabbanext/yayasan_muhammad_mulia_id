@@ -156,25 +156,25 @@
     effect: "fade",
     loop: true,  // Enable loop
     allowTouchMove: false,  // Disable swipe
-    autoplay: {
-        delay: 3000,  // Delay between transitions
-        disableOnInteraction: false,  // Continue autoplay after interaction
-    },
+    // autoplay: {
+    //     delay: 5000,  // Delay between transitions
+    //     disableOnInteraction: false,  // Continue autoplay after interaction
+    // },
     watchSlidesVisibility: true,
   });
 
   const bottomSwiper = new Swiper('.bottom-swiper', {
       pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          clickable: false,
       },
       slidesPerView: 1,
       loop: true,  // Enable loop
       allowTouchMove: false,  // Disable swipe
-      autoplay: {
-          delay: 3000,  // Delay between transitions
-          disableOnInteraction: false,  // Continue autoplay after interaction
-      },
+      // autoplay: {
+      //     delay: 5000,  // Delay between transitions
+      //     disableOnInteraction: false,  // Continue autoplay after interaction
+      // },
       watchSlidesVisibility: true,
   });
 
@@ -294,25 +294,25 @@
       effect: "fade",
       loop: true,
       allowTouchMove: false,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      // },
       watchSlidesVisibility: true,
     });
 
     const bottomSwiper = new Swiper('.bottom-swiper', {
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        clickable: false,
       },
       slidesPerView: 1,
       loop: true,
       allowTouchMove: false,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      // },
       watchSlidesVisibility: true,
     });
 
@@ -331,7 +331,7 @@
    * Initiate portfolio lightbox 
    */
   const portfolioLightbox = GLightbox({
-    selector: '.portfokio-lightbox'
+    selector: '.portfolio-lightbox'
   });
 
   /**

@@ -10,15 +10,27 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        return view('home');
-    }
+    public function index() {
+        $latestActivities = Activity::latest()->take(3)->get();
+        $latestPrograms = Program::all();;
+    
+        return view('home', compact('latestActivities', 'latestPrograms'));
+    }    
 
     public function programs()
     {
         $programs = Program::all();
         return view('our-programs', compact('programs'));
+    }
+    public function readProgram($id)
+    {
+        $program = Program::find($id);
+        
+        if (!$program) {
+            abort(404, 'Program not found');
+        }
+
+        return view('our-programs.read', compact('program'));
     }
 
     public function services()

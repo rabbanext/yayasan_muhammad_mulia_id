@@ -22,7 +22,7 @@
 						</p>
 					</div>
 					<div class="col-12 col-lg-5 order-first order-md-last">
-						<img src="{{ URL::asset('img/page-program/hero/2.png') }}" alt="" height="200" width="200">
+						<img src="{{ URL::asset('img/hero-logo.png') }}" alt="" height="200" width="200">
 					</div>
 				</div>
 			</div>

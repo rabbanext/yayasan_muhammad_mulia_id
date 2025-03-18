@@ -31,7 +31,7 @@
 						</p>
 					</div>
 					<div class="col-12 col-lg-5 order-first order-md-last">
-						<img src="{{ URL::asset('img/page-program/hero/1.png') }}" alt="" height="200" width="200">
+						<img src="{{ URL::asset('img/hero-logo.png') }}" alt="" height="200" width="200">
 					</div>
 				</div>
 			</div>
@@ -103,7 +103,7 @@
 									<h6>{{ ucfirst($program->category) }}</h6>
 									<h5>{{ $program->title }}</h5>
 									<p class="mb-2">{!! \Illuminate\Support\Str::limit($program->body, 100, '...') !!}</p>
-									<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
+									<a href="{{ route('our-programs.read', ['id' => $program->id]) }}" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
 									<a href="#" class="btn btn-primer mt-4 w-100">DONATE NOW</a>
 								</div>
 							</div>

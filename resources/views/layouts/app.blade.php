@@ -32,12 +32,13 @@
 	<div class="top-header">
 		<div class="container">
 			<div class="content">
-			<p class="text-white">Committed to creating a better future</p>
-			<div class="social-links">
-				<a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
-				<a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
-				<a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
-			</div>
+				<p class="text-white">Committed to creating a better future</p>
+				<div class="social-links">
+					<!-- <a href="#" class="text-white"><i class="bi bi-facebook"></i></a> -->
+					<a href="https://www.instagram.com/yammicenter/" class="text-white"><i class="bi bi-instagram"></i></a>
+					<a href="https://wa.me/6281210001010/" class="text-white"><i class="bi bi-whatsapp"></i></a>
+					<!-- <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a> -->
+				</div>
 			</div>
 		</div>
 	</div>	
@@ -49,18 +50,18 @@
 				</a>
 
 				<ul style="z-index: 99;">
-					<li><a class="nav-link" href="about-us">About us</a></li>
+					<li><a class="nav-link" href="about-us">About Us</a></li>
 					<li><a href="our-programs">Programs</a></li>
 					<li><a href="our-services">Services</a></li>
 					<li><a class="nav-link" href="our-businesses">Supported Businesses</a></li>
 					<li><a class="nav-link" href="our-activities">Activities</a></li>
-					<li><a class="nav-link scrollto" href="#">Contact</a></li>
+					<!-- <li><a class="nav-link scrollto" href="#">Contact</a></li> -->
 				</ul>
 
 				<div class="d-flex align-items-center">
 					<button type="button" class="btn btn-primer d-none d-md-inline me-3" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now</button>
 					<!-- <a class="btn btn-primer d-none d-md-inline me-3" href="#about">Donate Now</a> -->
-					<div class="lang-dropdown" style="z-index: 2;">
+					<!-- <div class="lang-dropdown" style="z-index: 2;">
 						<button class="btn bg-none dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<img src="{{ URL::asset('img/header/' . app()->getLocale() . '.png') }}" alt="" style="border-radius: 8px; width: 30px;">
 						</button>
@@ -81,7 +82,7 @@
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 					<i class="bi bi-list mobile-nav-toggle"></i>
 				</div>
 			</nav><!-- .navbar -->
@@ -107,35 +108,34 @@
 							<strong>Email:</strong> contact@muhammadmulia.id<br>
 						</p>
 						<div class="social-links mt-3">
-							<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-							<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-							<a href="#" class="tiktok"><i class="bi bi-tiktok"></i></a>
+							<a href="https://www.instagram.com/yammicenter/" class="instagram"><i class="bi bi-instagram"></i></a>
+							<a href="https://wa.me/6281210001010" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-6 footer-links">
-						<h4>Supported Business</h4>
+						<h4>Supported Businesses</h4>
 						<ul>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Tour & Travel</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Logistic</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Food & Beverage</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Herbal, Pharma, Cosmetic</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">IT & Eco-Technology</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Creative Media Production</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Fashion & Souvenir</a></li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>Tour & Travel</li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>Logistic</li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>Food & Beverage</li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>Herbal, Pharma, Cosmetic</li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>IT & Eco-Technology</li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>Creative Media Production</li>
+							<li class="text-white pb-0"><i class="bi bi-chevron-right"></i>Fashion & Souvenir</li>
 						</ul>
 					</div>
 
 					<div class="col-lg-3 col-6 footer-links">
 						<h4>Useful Links</h4>
 						<ul>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
 							<li><i class="bi bi-chevron-right"></i> <a href="about-us">About us</a></li>
 							<li><i class="bi bi-chevron-right"></i> <a href="our-programs">Program</a></li>
 							<li><i class="bi bi-chevron-right"></i> <a href="our-services">Services</a></li>
 							<li><i class="bi bi-chevron-right"></i> <a href="our-business">Supported Business</a></li>
 							<li><i class="bi bi-chevron-right"></i> <a href="our-activities">Activities</a></li>
-							<li><i class="bi bi-chevron-right"></i> <a href="#">Contact</a></li>
+							<!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Contact</a></li> -->
 						</ul>
 					</div>
 				</div>
@@ -143,12 +143,12 @@
 		</div>
 
 		<div class="container">
-		<div class="copyright">
-			&copy; Copyright <strong><span>Yayasan Muhammad Mulia Indonesia</span></strong>. All Rights Reserved
-		</div>
-		<div class="credits">
-			Designed by <a href="https://muhammadmulia.id/">YAMMI IT</a>
-		</div>
+			<div class="copyright">
+				&copy; Copyright <strong><span>Yayasan Muhammad Mulia Indonesia</span></strong>. All Rights Reserved
+			</div>
+			<div class="credits">
+				Designed by <a href="https://muhammadmulia.id/">YAMMI IT</a>
+			</div>
 		</div>
 	</footer><!-- End Footer -->
 
@@ -165,9 +165,9 @@
 					<p>Let's Make Dreams and Hopes Come True Together!</p>
 					<p>Join Us in Making a Difference!</p>
 					<img src="{{ URL::asset('img/donate/bsi.svg') }}" alt="" width="372" height="100" style="width: 100%;" />
-					<h3 class="mt-5">7202105097</h3>
-					<input type="text" value="7202105097" id="norek" hidden>
-					<p class="mt-0">a.n. Yayasan Muhammad Mulia Indonesia</p>
+					<h3 class="mt-5">7777756677</h3>
+					<input type="text" value="7777756677" id="norek" hidden>
+					<p class="mt-0">a.n. Muhammad Mulia Indonesia</p>
 					<button onclick="salinNorek()" class="btn btn-sm btn-primer mb-4">Copy account number</button>
 					<p>Every small step can make a big difference. With your donation, we can help more people, transform lives, and bring new hope.</p>
 				</div>

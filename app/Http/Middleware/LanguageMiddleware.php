@@ -5,18 +5,24 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class LanguageMiddleware
 {
+    protected $validLocales = ['en', 'id', 'ar'];
+
     public function handle(Request $request, Closure $next)
     {
-        // Read locale from session (default to config app.locale)
         $locale = $request->session()->get('locale', config('app.locale'));
 
-        App::setLocale($locale);
+        if (in_array($locale, $this->validLocales)) {
+            Session::put('locale', $locale);
+            App::setLocale($locale);
+        } else {
+            $locale = Session::get('locale', 'en');
+            App::setLocale($locale);
+        }
 
         return $next($request);
     }
 }
-    

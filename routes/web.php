@@ -9,7 +9,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BusinessController;
 
-Route::get('/{locale}', function ($locale) {
+Route::get('/l/{locale}', function ($locale) {
     if (!in_array($locale, ['en', 'id', 'ar'])) {
         abort(400);
     }
@@ -24,6 +24,7 @@ Route::get('/{locale}', function ($locale) {
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/our-programs', [HomeController::class, 'programs']);
+Route::get('/our-programs/read/{id}', [HomeController::class, 'readProgram'])->name('our-programs.read');
 Route::get('/our-services', [HomeController::class, 'services']);
 Route::get('/our-businesses', [HomeController::class, 'businesses']);
 Route::get('/our-activities', [HomeController::class, 'activities']);

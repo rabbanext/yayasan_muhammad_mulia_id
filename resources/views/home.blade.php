@@ -104,7 +104,7 @@
 					<div class="col-lg-5 col-md-12 vl order-first mb-5 mb-md-0">
 						<h4>About us</h4>
 						<h2>Get to <span>know</span> more about <br> Yayasan Muhammad Mulia Indonesia</h2>
-						<a href="#" class="text-anchor">Learn more <i class="bi bi-arrow-up-right"></i></a>
+						<a href="/about-us" class="text-anchor">Learn more <i class="bi bi-arrow-up-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -118,11 +118,11 @@
 			<div class="container">
 				<div class="row our-ecosystem-container">
 					<div class="col-md-12 col-lg-4">
-						<div class="text-start">
+						<header class="section-header text-start">
 							<p>Our Ecosystem</p>
 							<h2>Ecosystem of Muhammad Mulia Foundation</h2>
-						</div>
-						<a href="#" class="btn btn-second mb-5">Learn More</a>
+						</header>
+						<!-- <a href="#" class="btn btn-second mb-5">Learn More</a> -->
 					</div>
 
 					<div class="col-md-12 col-lg-4">
@@ -170,63 +170,31 @@
 					<h1>Our current <span>initiatives</span></h1>
 				</header>
 				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="box">
-							<img src="{{ URL::asset('img/our-program/1.png') }}" alt="">
-							<div class="box-content">
-								<h6>Education</h6>
-								<h5>Muhammad Mulia Boarding School Development</h5>
-								<p class="mb-2">
-								The initiative began with a land endowment of 9,000 square meters in the heart of Jambi City, and Yayasan Muhammad Mulia Indonesia quickly took the lead in ...
-								</p>
-								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
+					@if (!$latestPrograms->isEmpty())
+						@foreach ($latestPrograms as $program)
+							<div class="col-lg-3 col-md-6">
+								<div class="box">
+									<img src="{{ asset('storage/' . $program->image) }}" alt="{{ $program->title }}">
+									<div class="box-content">
+										<h6>{{ $program->category }}</h6>
+										<h5>{{ $program->title }}</h5>
+										<p class="mb-2">
+											{{ Str::limit($program->description, 100) }}
+										</p>
+										<a href="{{ route('our-programs.read', ['id' => $program->id]) }}" class="text-anchor">
+											Read more <i class="bi bi-arrow-up-right"></i>
+										</a>
+										<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">
+											DONATE NOW
+										</button>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="box">
-							<img src="{{ URL::asset('img/our-program/2.png') }}" alt="">
-							<div class="box-content">
-								<h6>Education</h6>
-								<h5>Development of Al-Quran Memorization Boarding School in Kenten Palembang</h5>
-								<p class="mb-2">
-								A boarding school focused primarily on Tahfidz (Al-Quran memorization), with additional skills training to enable the graduates to be ...
-								</p>
-								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="box">
-							<img src="{{ URL::asset('img/our-program/3.png') }}" alt="">
-							<div class="box-content">
-								<h6>Education</h6>
-								<h5>Development of Insan Mandiri Arrahman School (Cultivating Honest and Quality Individuals)</h5>
-								<p class="mb-2">
-								A school with a vision to become the best model school at the national level, actively fostering independent ...								</p>
-								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="box">
-							<img src="{{ URL::asset('img/our-program/4.png') }}" alt="">
-							<div class="box-content">
-								<h6>Education</h6>
-								<h5>Istanbul Gelisim University Scholarships for Indonesian Students</h5>
-								<p class="mb-2"> developed into a student exchange Providing opportunities for outstanding Indonesian students to study abroad. This scholarship program can be further ...
-								</p>
-								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
-								<button type="button" class="btn btn-primer mt-4 w-100" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE NOW</button>
-							</div>
-						</div>
-					</div>
+						@endforeach
+					@endif
 				</div>
 				<div class="text-center mt-lg-5">
-					<div class="btn btn-second">See All Programs <i class="bi bi-arrow-right"></i></div>
+					<a class="btn btn-second" href="/our-programs">See All Programs <i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
 		</section><!-- End our-program Section -->
@@ -241,32 +209,48 @@
 				<div class="swipers-wrapper">
 					<div class="top-swiper">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide top-swiper-slide" style="background: url('https://placehold.co/700x400') no-repeat center; background-size: cover;"></div>
-							<div class="swiper-slide top-swiper-slide" style="background: url('https://placehold.co/700x400') no-repeat center; background-size: cover;"></div>
-							<div class="swiper-slide top-swiper-slide" style="background: url('https://placehold.co/700x400') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('{{ asset('img/page-services/education.png') }}') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('{{ asset('img/page-services/economic.png') }}') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('{{ asset('img/page-services/research.png') }}') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('{{ asset('img/page-services/humanity.png') }}') no-repeat center; background-size: cover;"></div>
+							<div class="swiper-slide top-swiper-slide" style="background: url('{{ asset('img/page-services/others.png') }}') no-repeat center; background-size: cover;"></div>
 						</div>
 					</div>
 					<div class="bottom-swiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<img src="{{ URL::asset('img/our-services/1.png') }}" alt="">
-								<h5>Educational Service</h5>
+								<h5>Education</h5>
 								<p>
 									These services are designed to position Yayasan Muhammad Mulia Indonesia as a strategic partner in the education sector, offering business opportunities while still supporting the foundation's social mission.
 								</p>
 							</div>
 							<div class="swiper-slide">
 								<img src="{{ URL::asset('img/our-services/1.png') }}" alt="">
-								<h5>Educational Service</h5>
+								<h5>Economic Empowerment</h5>
 								<p>
-									These services are designed to position Yayasan Muhammad Mulia Indonesia as a strategic partner in the education sector, offering business opportunities while still supporting the foundation's social mission.
+									These services aim to establish Yayasan Muhammad Mulia Indonesia as a key player in fostering financial independence and sustainable livelihoods, providing business opportunities while advancing the foundation's mission to uplift communities.
 								</p>
 							</div>
 							<div class="swiper-slide">
 								<img src="{{ URL::asset('img/our-services/1.png') }}" alt="">
-								<h5>Educational Service</h5>
+								<h5>Research</h5>
 								<p>
-									These services are designed to position Yayasan Muhammad Mulia Indonesia as a strategic partner in the education sector, offering business opportunities while still supporting the foundation's social mission.
+									Through these services, Yayasan Muhammad Mulia Indonesia positions itself as a thought leader in data-driven solutions, offering research-based insights that create business value while addressing social challenges.
+								</p>
+							</div>
+							<div class="swiper-slide">
+								<img src="{{ URL::asset('img/our-services/1.png') }}" alt="">
+								<h5>Humanity</h5>
+								<p>
+									These services reinforce Yayasan Muhammad Mulia Indonesia's commitment to humanitarian efforts, ensuring that business collaborations align with impactful social initiatives, creating sustainable change for those in need.
+								</p>
+							</div>
+							<div class="swiper-slide">
+								<img src="{{ URL::asset('img/our-services/1.png') }}" alt="">
+								<h5>Others</h5>
+								<p>
+									A diverse range of services designed to expand Yayasan Muhammad Mulia Indonesia's reach, offering innovative solutions that balance commercial success with the foundation's dedication to social progress.
 								</p>
 							</div>
 						</div>
@@ -282,12 +266,12 @@
 					</div>
 				</div>
 				<div class="text-center mt-lg-5">
-					<div class="btn btn-third">See All Services <i class="bi bi-arrow-right"></i></div>
+					<a class="btn btn-third" href="/our-services">See All Services <i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
 		</section><!-- End Services Section -->
 
-		<!-- ======= Supported Business Section ======= -->
+		<!-- ======= Our Activities Section ======= -->
 		<section id="our-activities" class="our-activities">
 			<div class="container">
 				<div class="header-container">
@@ -295,61 +279,57 @@
 						<p>Our Activities</p>
 						<h1>Explore our vibrant <span>activities</span></h1>
 					</header>
-					<div class="btn btn-third">See All Activities <i class="bi bi-arrow-right"></i></div>
+					<a class="btn btn-third" href="/our-activities">See All Activities <i class="bi bi-arrow-right"></i></a>
 				</div>
-				<div class="row" data-aos="fade-left">
+				<div class="row d-flex flex-column flex-lg-row" data-aos="fade-left">
+					{{-- Big Card on the Left --}}
 					<div class="col-lg-6 col-md-12 mb-3">
-						<div class="card main">
-							<img src="https://placehold.co/400x300" alt="">
-							<div class="card-body">
-								<p>October 19, 2022</p>
-								<h5>Muhammad Mulia Indonesia</h5>
-								<p class="mb-2">The initiative began with a land endowment of 9,000 square meters in the ...</p>
-								<a href="#" class="text-anchor">Read more <i class="bi bi-arrow-up-right"></i></a>
+						@if ($latestActivities->isNotEmpty())
+							<div class="card main h-100">
+								<div class="img-container-activities">
+									<img src="{{ asset('storage/' . $latestActivities[0]->image) }}" alt="{{ $latestActivities[0]->title }}">
+								</div>
+								<div class="card-body">
+									<p>{{ $latestActivities[0]->created_at->format('F d, Y') }}</p>
+									<h5>{{ $latestActivities[0]->title }}</h5>
+									<p class="mb-2">{{ Str::limit($latestActivities[0]->description, 100) }}</p>
+								</div>
 							</div>
-						</div>
+						@endif
 					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="card mb-3">
-							<div class="row g-0">
-								<div class="col-md-4">
-									<img src="https://placehold.co/150x200" class="img-fluid rounded-start" alt="...">
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-										<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
+					{{-- Small Cards on the Right --}}
+					<div class="col-lg-6 col-md-12 d-flex flex-column gap-3">
+						@foreach ($latestActivities->skip(1) as $activity)
+							<div class="card mb-3 h-100">
+								<div class="row g-0 h-100">
+									<div class="col-md-4">
+										<div class="img-container-activities h-100">
+											<img src="{{ asset('storage/' . $activity->image) }}" alt="{{ $activity->title }}">
+										</div>
+									</div>
+									<div class="col-md-8 d-flex align-items-center">
+										<div class="card-body">
+											<h5 class="card-title">{{ $activity->title }}</h5>
+											<p class="card-text">{{ Str::limit($activity->description, 80) }}</p>
+											<p class="card-text"><small class="text-body-secondary">{{ $activity->created_at->diffForHumans() }}</small></p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="card mb-3">
-							<div class="row g-0">
-								<div class="col-md-4">
-									<img src="https://placehold.co/150x200" class="img-fluid rounded-start" alt="...">
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-										<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>
-		</section><!-- End our-activities Section -->
+		</section><!-- End Our Activities Section -->
 
 		<!-- ======= Supported Business Section ======= -->
 		<section id="supported-business" class="supported-business">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4">
-						<img src="{{ URL::asset('img/features.png') }}" class="img-fluid" alt="">
-					</div>
+					<div class="col-lg-4 d-flex justify-content-center align-items-center">
+                        <img src="{{ URL::asset('img/hero-logo.png') }}" class="img-fluid" alt="" style="height: 200px;">
+                    </div>
 
 					<div class="col-lg-8">
 						<header class="section-header text-start py-4">
@@ -442,7 +422,7 @@
 
 				</div>
 				<div class="text-center mt-5">
-					<div class="btn btn-second">See all Supported business <i class="bi bi-arrow-right"></i></div>
+					<a class="btn btn-second" href="/our-businesses">See all Supported business <i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
 		</section><!-- End Supported Business Section -->
@@ -485,11 +465,11 @@
 			</div>
 		</section><!-- End Clients Section -->
 
-		<section class="support">
+		<!-- <section class="support">
 			<div class="container">
 				<img src="{{ URL::asset('img/support/flow-1.png') }}" alt="" style="width: 100%; margin-bottom: 60px;">
 				<img src="{{ URL::asset('img/support/flow-2.png') }}" alt="" style="width: 100%; margin-bottom: 60px;">
 			</div>
-		</section>
+		</section> -->
 	</main><!-- End #main -->
 @endsection

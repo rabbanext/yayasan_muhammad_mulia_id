@@ -59,7 +59,7 @@
 			</div>
 		</section><!-- End Ecosystem Section -->
 
-		<!-- ======= Business Section ======= -->
+		<!-- ======= Activities Section ======= -->
 		<section id="activities" class="activities">
 			<div class="container">
 				<header class="section-header">
@@ -93,12 +93,10 @@
 					@endforelse
 				</div>
 			</div>
-		</section><!-- End Clients Section -->
+		</section><!-- End Activities Section -->
 
-		<section id="banner">
-			<div class="container">
-				<img src="{{ URL::asset('img/page-activities/banner.png" class="w-100" alt="">
-			</div>
-		</section>
+		<div class="container">
+			<img src="{{ URL::asset('img/page-activities/banner.png') }}" class="w-100" alt="" style="width: 100%; margin-bottom: 60px; box-shadow: 0px 0px 15px rgba(48, 48, 48, 0.1); border-radius: 24px">
+		</div>
 	</main><!-- End #main -->
 @endsection
