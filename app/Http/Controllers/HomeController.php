@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index() {
         $latestActivities = Activity::latest()->take(3)->get();
-        $latestPrograms = Program::all();;
+        $latestPrograms = Program::latest()->take(4)->get();
     
         return view('home', compact('latestActivities', 'latestPrograms'));
     }    
